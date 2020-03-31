@@ -35,10 +35,6 @@
 </head>
 <body>
 
-<video controls autoplay>
-	<source src="MUSIC/letmetakeyouthere.mp4" type="video/mp4" width="0" height="0">
-</video>
-
 <div class="foo">
 	  <span class="letter" data-letter="H">H</span>
 	  <span class="letter" data-letter="A">A</span>
@@ -67,10 +63,22 @@
 
 
 <div class="btn-message">
-	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="playAudio()">
 	Press me Riz!
 	</button>
  </div>
+
+<audio id="myAudio" controls style="display: none;"> 
+	<source src="MUSIC/letmetakeyouthere.mp3" type="audio/mp3" hidden="true">
+</audio>
+
+ <script>
+ 	var audio = document.getElementById("myAudio");
+
+ 	function playAudio(){
+ 		audio.play();
+ 	}
+ </script>
 
 <div class="collapse" id="collapseExample">
   <div class="card card-body" style="background: transparent;">
