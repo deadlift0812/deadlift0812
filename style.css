@@ -9,7 +9,7 @@
   -webkit-text-fill-color: transparent;
   font-size: 40px;
   animation: rainbow 8s ease infinite;
-  font-family: cursive;
+  font-family: Courier, monospace;
 }
 
 @keyframes rainbow { 
