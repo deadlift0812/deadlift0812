@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="fontawesome-free-5.12.1-web/css/all.css">
+	<title>For my princess</title>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i><strong> HOME </strong></a></li>
+      <li><a href="gallery.html" class="active"><i class="fas fa-photo-video"></i><strong> GALLERY </strong></a></li>
+    </ul>
+  </nav>
+
+<div class="wrap">
+<h1>You are
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "beautiful...", "special", "mesmerizing", "one of a kind" ]'></span>
+</h1>
+</div>
+
+<style>
+  .gallery-slider-wrapper {
+    height: 100%;
+    width: 100%;  
+  }
+
+  img {
+    height: 75vh;
+    width: 100%;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .swiper-container {
+    box-shadow: 2px 2px 2px 2px silver;
+  }
+
+</style>
+
+<div class="gallery-slider-wrapper">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+  <div class="swiper-container">
+<!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides --> 
+          <div class="swiper-slide"><img src="IMG/1.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/2.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/3.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/4.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/5.png"></div>
+          <div class="swiper-slide"><img src="IMG/6.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/7.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/8.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/9.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/10.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/11.jpg"></div>
+          <div class="swiper-slide"><img src="IMG/12.jpg"></div>
+          
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+  </div>
+</div>
+</div>
+
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })
+  </script>
+
+<style>
+
+	* {
+		padding: 0;
+		margin: 0;
+	}
+
+	body {
+ 		 background-image: url("IMG/hbdBG2.jpg");
+ 		 background-repeat: no-repeat;
+ 		 background-attachment: fixed;
+ 		 background-size: cover;
+ 		 background-size: 100% 100%;
+		height: 80vh;
+		width: 100vw;
+		image-rendering: -webkit-optimize-contrast;
+  
+	}
+
+	h1 {
+	  font-weight: 200;
+	  font-family: comic sans ms;
+	  color: white;
+	  font-size: 30px;
+	}
+
+
+</style>
+
+<script>
+	var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+</script>
+
+</body>
+</html>
