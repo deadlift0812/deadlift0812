@@ -71,7 +71,7 @@
 	var music2 = new Audio("MUSIC/sparks.mp3");
 	var music3 = new Audio("MUSIC/usagainsttheworld.mp3");
 	var music4 = new Audio("MUSIC/askyfullofstars.mp3");
-
+	var music5 = new Audio("MUSIC/Isabellalullaby.mp3");
 
 </script>
 
@@ -81,6 +81,7 @@
  	var audio2 = music2;
  	var audio3 = music3;
  	var audio4 = music4;
+ 	var audio5 = music5;
 
 
  	function playAudio(){
@@ -91,9 +92,13 @@
 	 		audio3.play();
  		audio3.addEventListener('ended', function(){
 	 		audio4.play();
+ 		audio4.addEventListener('ended', function(){
+	 		audio5.play();
 	 	});		
 
  		});
+
+	 	});
 
 	 	});
 
